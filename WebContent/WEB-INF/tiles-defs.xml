@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>   
+   	<definition name="tiles.home" path="/index.jsp">		  
+  		<put name="header" 	value="WEB-INF/jsp/headerHome.jsp" 	type="page" />
+ 		<put name="body"   	value="WEB-INF/jsp/body.jsp" 	type="page" />
+ 		<put name="footer"  value="WEB-INF/jsp/footer.jsp" 	type="page" />
+	</definition>
+	
+	<definition name="tiles.home-logged" extends="tiles.home">		  
+  		<put name="header" 	value="WEB-INF/jsp/header.jsp" 	type="page" />
+	</definition>
+	
+	<definition name="tiles.login" extends="tiles.home">
+		<put name="body" value="WEB-INF/jsp/login.jsp" type="page" />
+		<put name="errorMessage" value="${requestScope.errorMessage}" type="string" />
+	</definition>
+	<definition name="tiles.login-success" extends="tiles.home">
+		<put name="header" value="WEB-INF/jsp/header.jsp" type="page"/>
+	</definition>
+	<definition name="tiles.tabellaCorrentisti" extends="tiles.login-success">
+		<put name="body" value="WEB-INF/protected/elencoCorrentisti.jsp"></put>
+	</definition>
+	<definition name="tiles.view-correntista" extends="tiles.login-success">
+	    <put name="tabCorrentisti" value="WEB-INF/protected/elencoCorrentisti.jsp"></put>
+	    <put name="body" value="WEB-INF/protected/viewCorrentista.jsp"></put>
+	</definition>
+
+	
+	<definition name="tiles.inserimentoSuccess" extends="tiles.login-success">
+		<put name="body" value="WEB-INF/protected/correntistaInserito.jsp"></put>
+	</definition>
+	<definition name="tiles.ricercaCorrentista" extends="tiles.login-success">
+		<put name="body" value="WEB-INF/protected/ricercaCorrentista.jsp"></put>
+	</definition>
+	<definition name="tiles.nuovoCorrentista" extends="tiles.login-success">
+		<put name="body" value="WEB-INF/protected/nuovoCorrentista.jsp"></put>
+	</definition>
+</tiles-definitions>

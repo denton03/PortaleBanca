@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Beneficiari(
+  cod_ben INT NOT NULL,
+  rag_sociale VARCHAR(50) NOT NULL,
+  cod_fiscale VARCHAR(16),
+  partita_iva VARCHAR(11),
+  indirizzo VARCHAR(30) NOT NULL,
+  id_comune INT NOT NULL, 
+  cap INT NOT NULL,
+  iban VARCHAR(27) NOT NULL,
+  PRIMARY KEY(cod_ben),
+  FOREIGN KEY(id_comune) REFERENCES BancaIntesa.Comuni(id_comune)
+);
+---

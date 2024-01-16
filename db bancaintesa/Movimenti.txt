@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Movimenti (
+  Cod_Mov BIGINT NOT NULL,
+  Cod_cab_m INT NOT NULL,
+  Cod_Cc_M BIGINT NOT NULL,
+  Data_Mov DATE NOT NULL,
+  Data_Valuta DATE NOT NULL,
+  Importo_op DECIMAL(15,2) NOT NULL,
+  Tipo_Mov VARCHAR(2) NOT NULL,
+  Cod_dis INT,
+  Cod_bon BIGINT,
+  PRIMARY KEY(Cod_Mov),
+  FOREIGN KEY(Cod_cab_m) REFERENCES BancaIntesa.Agenzie(Cod_cab),
+  FOREIGN KEY(Cod_Cc_M) REFERENCES BancaIntesa.Conti_Correnti(Cod_Cc),
+  FOREIGN KEY(Tipo_Mov) REFERENCES BancaIntesa.Tipi_Movimenti(Tipo_Mov),
+  FOREIGN KEY(Cod_dis) REFERENCES BancaIntesa.Distinte(Cod_dist),
+  FOREIGN KEY(Cod_bon) REFERENCES BancaIntesa.Bonifici(Cod_bonifico)
+);
+---

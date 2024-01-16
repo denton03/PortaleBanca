@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Banche(
+  cod_banca VARCHAR(5) NOT NULL,
+  nome_banca VARCHAR(30) NOT NULL,
+  PRIMARY KEY(cod_banca)
+);
+---
+insert into BancaIntesa.Banche values ('INTSP', 'Intesa San Paolo');
+insert into BancaIntesa.Banche values ('POSTA', 'Banco Posta');
+insert into BancaIntesa.Banche values ('UNICR', 'Unicredit');
+insert into BancaIntesa.Banche values ('BMDPS', 'Bk Monte dei Paschi di Siena');
+insert into BancaIntesa.Banche values ('BDNAP', 'Banco di Napoli');
+insert into BancaIntesa.Banche values ('CREEM', 'Credito Emiliano');
+insert into BancaIntesa.Banche values ('BNLAV', 'Bk Nazionale del Lavoro');
+insert into BancaIntesa.Banche values ('BPDMS', 'Bk Popolare di Milano Scarl');

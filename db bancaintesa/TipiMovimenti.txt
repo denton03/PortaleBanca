@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Tipi_Movimenti(
+  tipo_mov VARCHAR(2) NOT NULL,
+  descrizione VARCHAR(2) NOT NULL,
+  PRIMARY KEY(tipo_mov),
+  CHECK(descrizione = 'DV' or descrizione = 'BB' or descrizione = 'PR')
+);
+---

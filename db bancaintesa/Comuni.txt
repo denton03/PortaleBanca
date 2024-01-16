@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Comuni(id_comune INT NOT NULL,
+  descrizione VARCHAR(10) NOT NULL,
+  PRIMARY KEY(id_comune)
+);
+---
+insert into BancaIntesa.Comuni values (1000000, 'Milano');
+insert into BancaIntesa.Comuni values (1000001, 'Firenze');
+insert into BancaIntesa.Comuni values (1000002, 'Torino');
+insert into BancaIntesa.Comuni values (1000003, 'Roma');
+insert into BancaIntesa.Comuni values (1000004, 'Napoli');
+insert into BancaIntesa.Comuni values (1000005, 'Pisa');
+insert into BancaIntesa.Comuni values (1000006, 'Venezia');
+insert into BancaIntesa.Comuni values (1000007, 'Genova');
+insert into BancaIntesa.Comuni values (1000008, 'Bologna');

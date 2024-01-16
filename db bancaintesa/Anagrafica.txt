@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Anagrafica(Cod_anag int NOT NULL, 
+ Cognome varchar(30) NOT NULL, 
+ Nome varchar(30) NOT NULL, 
+ Rag_soc varchar(40), 
+ Indirizzo varchar(30) NOT NULL,
+ Id_comune int NOT NULL,
+ Sesso varchar(01) NOT NULL, 
+ Data_nascita date NOT NULL, 
+ Luogo_nascita varchar(20) NOT NULL, 
+ Cod_Fiscale varchar(16), 
+ Partita_iva varchar(11), 
+ Telefono1 varchar(10) NOT NULL, 
+ Telefono2 varchar(10), 
+ Email varchar(30),
+ PRIMARY KEY (Cod_anag), 
+ FOREIGN KEY(Id_comune) REFERENCES BancaIntesa.Comuni(Id_comune),
+ CHECK(Sesso = 'M' or Sesso = 'F')
+);
+---

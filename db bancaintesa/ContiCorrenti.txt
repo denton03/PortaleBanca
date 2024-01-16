@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Conti_Correnti(
+  Iso VARCHAR(2) NOT NULL,
+  Num_controllo INT NOT NULL,
+  cin VARCHAR(1) NOT NULL,
+  Abi INT NOT NULL,
+  Cab INT NOT NULL,
+  Cod_Cc BIGINT NOT NULL, 
+  Cod_Anag_Cc INT NOT NULL,
+  Importo_Saldo DECIMAL(20,2) NOT NULL,
+  Importo_Fido DECIMAL(20,2)NOT NULL,
+  PRIMARY KEY(Cod_Cc),
+  FOREIGN KEY(Cod_Anag_Cc) REFERENCES BancaIntesa.Anagrafica(Cod_Anag),
+  FOREIGN KEY(Cab) REFERENCES BancaIntesa.Agenzie(Cod_Cab)
+);
+---

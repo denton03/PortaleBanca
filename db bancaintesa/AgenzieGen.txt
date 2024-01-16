@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Agenzie_Gen(
+  cod_cab INT NOT NULL,
+  cod_banca VARCHAR(5) NOT NULL,
+  nome_agenzia VARCHAR(30) NOT NULL,
+  indirizzo VARCHAR(30) NOT NULL,
+  città VARCHAR(30) NOT NULL,
+  PRIMARY KEY(cod_cab),
+  FOREIGN KEY(cod_banca) REFERENCES BancaIntesa.Banche(cod_banca)
+);
+---

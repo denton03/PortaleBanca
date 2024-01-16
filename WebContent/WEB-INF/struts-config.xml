@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="beanUserLogin" type="bean.BeanUserLogin"></form-bean>
+        <form-bean name="beanAnagrafica" type="bean.BeanAnagrafica"></form-bean>
+        <form-bean name="beanCognomeNome" type="bean.BeanCognomeNome"></form-bean>
+        <form-bean name="beanCorrentisti" type="bean.Correntisti"></form-bean>
+        <form-bean name="beanCorrentista" type="bean.Correntista"></form-bean>
+    </form-beans>
+
+    <global-forwards>
+        <forward name="index" path="/index.do"/> 
+        <forward name="login" path="/login.do"/>
+    </global-forwards>
+    
+    <action-mappings>
+    	
+        <action path="/index" type="action.Parti">	
+            <forward name="success" path="tiles.home" />
+            <forward name="logged" path="tiles.home-logged"/>
+        </action>
+        
+    	<action path="/getDescrizioneComuni" type="action.GetComuniAction" />
+    	
+		<action path="/logout" type="action.LogoutAction" >
+		  <forward name="success" path="/index.do" redirect="true"></forward>
+		</action>
+        <action path="/login" type="action.LoginAction" name="beanUserLogin" scope="session" validate="true">
+            <forward name="success" path="tiles.home-logged"/> 
+            <forward name="failure" path="tiles.login"/> 
+        </action>
+    	<action path="/getCognomi" type="action.GetCognomeAction"></action>
+    	<action path="/getNomi" type="action.GetNomiAction"/>
+    	<action path="/getCodCC" type="action.GetCodCCAction" parameter="method"/>
+    	
+    	<action path="/correntisti" type="action.CaricaCorrentistiAction" name="beanCorrentisti" scope="session">
+    		<forward name="ok" path="tiles.tabellaCorrentisti"/>
+    	</action>
+    	<action path="/viewCorrentista" type="action.VisualizzaCorrentistaAction" scope="request">
+    	</action>
+    	
+        <action path="/nuovoCorrentista" type="action.RedirectInserimentoAnagraficaAction" >
+        	<forward name="success" path="tiles.nuovoCorrentista"/>
+        </action> 
+        <action path="/inserimentoCorrentista" type="action.NuovoCorrentistaAction" name="beanAnagrafica" scope="request" validate="true">
+        	<forward name="success" path="tiles.nuovoCorrentista"/>
+        	<forward name="fail" path="tiles.nuovoCorrentista"/>
+        </action>
+        <action path="/modifica" type="action.RicercaModificaCorrentistaAction" parameter="method" name="beanAnagrafica" scope="request" validate="false">
+        	<forward name="view" path="tiles.ricercaCorrentista"></forward>
+        </action>
+        <action path="/ricercaCorrentista" type="action." name="beanCognomeNome" scope="request" />
+        <action path=""></action>
+    </action-mappings>
+
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+        <set-property property="moduleAware" value="true"/>
+    </plug-in>
+</struts-config>

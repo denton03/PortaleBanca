@@ -1,0 +1,85 @@
+/*barra menu*/
+.barraMenu{
+  background-color:#00ff00;
+  padding-top:15px;
+  padding-left:20px;
+  margin-bottom: 5%;
+}
+.home-button {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007025; /* Verde */
+    color: #fff; /* Bianco */
+    cursor: pointer;
+  }
+
+  .home-button:hover {
+    background-color: #45a049; /* Verde piu scuro al passaggio del mouse */
+  }
+  /*bottone menu anagrafica correntisti*/
+  .dropdown-button {
+    margin-top:-2.5%;
+    margin-left: 5%;
+    padding: 10px;
+    font-size: 16px;
+    width:11%;
+    border: none;
+    border-radius: 5px;
+    background-color: #007025;
+    color: #fff;
+    cursor: pointer;
+  }
+  /*bottone quando mouse passa sopra*/
+  .dropdown-button:hover {
+    background-color: #45a049;
+    transition: background-color 1s;
+  }
+  /*div dei bottoni opzioni*/
+  .dropdown-options {
+    margin-left: 5%;
+    display: none;
+    position: absolute;
+    color: #004b9b; 
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  /*bottone opzione*/
+  .dropdown-option {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  /*bottone opzione quando mouse è sopra*/
+  .dropdown-option:hover {
+    background-color: #cce5ff;
+    transition: background-color 1s;
+  }
+  /* Stile per il pulsante logout */
+  .logout {
+    margin-top: -2.5%;
+    margin-left: 90%;
+    padding: 10px;
+    width:5%;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: #fff; /* Bianco */
+    cursor: pointer;
+  }
+  /*bottone logout quando mouse è sopra*/
+  .logout:hover {
+    background-color: #750000; /* Verde pi� scuro al passaggio del mouse */
+  }
+  /* Stile per il pulsante logout */
+  /*--------------------------*/
+  button:hover{
+    transition: background-color 1s;
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+  }

@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Agenzie(
+  Cod_Cab INT NOT NULL,
+  nome_agenzia VARCHAR(30) NOT NULL,
+  indirizzo VARCHAR(30) NOT NULL,
+  città VARCHAR(20) NOT NULL,
+  telefono INT NOT NULL, 
+  fax INT NOT NULL,
+  PRIMARY KEY(Cod_Cab)
+);
+---
+insert into BancaIntesa.Agenzie values (10000, 'Grupponfo', 'Via Giovanni Pascoli 3', 'Milano', 0229526859, 0229526859);
+insert into BancaIntesa.Agenzie values (10001, 'Esselunga', 'VIA CANOVA 164', 'Firenze', 0557331896, 0557331897);
+insert into BancaIntesa.Agenzie values (10002, 'Intesa San Paolo', ' Viale Abruzzi 4', 'Milano', 0229426811, 0229426811);

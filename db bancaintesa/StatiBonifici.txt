@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Stati_Bonifici(
+  cod_statobon INT NOT NULL,
+  descrizione VARCHAR(11) NOT NULL,
+  PRIMARY KEY(cod_statobon),
+  CHECK(descrizione = 'Bozza' or descrizione = 'Autorizzato' or descrizione = 'Revocato' or descrizione = 'Errore')
+);
+---
+insert into BancaIntesa.Stati_Bonifici values (10, 'Bozza');
+insert into BancaIntesa.Stati_Bonifici values (11, 'Autorizzato');
+insert into BancaIntesa.Stati_Bonifici values (12, 'Revocato');
+insert into BancaIntesa.Stati_Bonifici values (13, 'Errore');

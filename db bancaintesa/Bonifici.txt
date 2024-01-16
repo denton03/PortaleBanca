@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS BancaIntesa.Bonifici(
+  cod_bonifico BIGINT NOT NULL,
+  Num_controllo INT NOT NULL,
+  cod_ben INT NOT NULL,
+  descrizione VARCHAR(100) NOT NULL,
+  data_ora_auto DATE NOT NULL,
+  mun_cro BIGINT NOT NULL, 
+  id_stato INT NOT NULL,
+  PRIMARY KEY(cod_bonifico),
+  FOREIGN KEY(cod_ben) REFERENCES BancaIntesa.Beneficiari(cod_ben),
+  FOREIGN KEY(id_stato) REFERENCES BancaIntesa.Stati_Bonifici(Cod_Statobon)
+);
+---

@@ -1,0 +1,1 @@
+<button onclick="window.location.href='/BancaIntesa/index.do'">Index</button>

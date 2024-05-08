@@ -7,11 +7,11 @@ import java.sql.SQLException;
 public class ConnessioneDBPostgre {
 	
 
-	private String serverName = "195.231.38.29";
-	private String portNumber = "5433";
-	private String sid = "corsodb002";
-	private String userName = "corsodb002";
-	private String password = "ciaociao";
+	private String serverName = "192.244.44.55";
+	private String portNumber = "1111";
+	private String sid = "dbone";
+	private String userName = "dbone";
+	private String password = "password";
 
 	public Connection connetti () throws ClassNotFoundException, SQLException {
 		
